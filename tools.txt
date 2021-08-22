@@ -1,4 +1,3 @@
 curl
 tree
-git
 nvim
