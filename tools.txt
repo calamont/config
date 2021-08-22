@@ -1,3 +1,4 @@
 curl
 tree
 nvim
+zsh
