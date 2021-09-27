@@ -4,22 +4,22 @@
 # See the documentation for what each characters means
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 ##
-PROMPT='%F{#9EB85F}%B%M%b%f %F{#FF9E64}%T%f %B%F{#9EB85F}|%f%b '
+PROMPT='%F{#9EB85F}%B%~%b%f %F{#FF9E64}%T%f %B%F{#9EB85F}|%f%b '
+
+##
+# IMPORT ALIASES
+##
+source $ZDOTDIR/aliases.sh
 
 ##
 # TODOS
-# 1. CHANGE ZSH CONFIG LOCATION
-# Instead of keeping .zshrc in the $HOME directory, its possible to change
-# where zsh looks for the .zshrc. This is done by creating a .zshenv file
-# (which must be in your $HOME directory) and adding
-# ```
-# export XDG_CONFIG_HOME="$HOME/.config"
-# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-# ```
-# to it. Then you can have all your zsh related work (including any plugins
-# or custom scripts) in $HOME/.config/zsh. As an aside, it is also possible
-# to define XDG_CONFIG_HOME system wide in /etc/profile
-#
+# 1. DYNAMIC PATH IN PROMPT
+# It would be cool to have the full path in the prompt, but if this is above
+# a certain number of characters, then change this to just the parent and
+# current directory (perhaps preceeded by '..'). For more information check
+# out this SO answer:
+# https://unix.stackexchange.com/questions/369847/how-to-configure-zsh-prompt-so-that-its-length-is-proportional-to-terminal-width#369862
+# 
 ##
 
 # TODO: REMOVE OH MY ZSH
@@ -135,24 +135,8 @@ COMPLETION_WAITING_DOTS="true"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pip=pip3
-alias ls="ls -lG"
-alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
-alias UCL="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/UCL"
-alias modules="cd /Users/cal_lamont/Library/Mobile\ Documents/com~apple~CloudDocs/programming/python/modules"
-alias weather="curl http://wttr.in/"
-# alias grep="ggrep"  # use GNU grep
-alias paws="aws --profile personal"
-alias ec2ls="aws ec2 describe-instances --profile personal  --region eu-west-2 | jq -r '.Reservations[] | .Instances[] | \"\(.InstanceId)\t\(.InstanceType)\t\(.LaunchTime)\"'"
-alias fvim="nvim -c 'Telescope find_files'"  # automatically open nvim in Telescope file browser
-alias gvim="nvim -c 'Ge:'"  # use nvim fugitive plugin to organise git
-# Authentical AWS ECR with Docker
-alias ecr_login='aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com'
 
-alias config='git --git-dir=$HOME/new_dotfiles/ --work-tree=$HOME'
+# alias config='git --git-dir=$HOME/new_dotfiles/ --work-tree=$HOME'
 
 # TODO: Need to bind `edit-command-line` to something to allow better editing of
 # commands
