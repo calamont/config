@@ -6,9 +6,9 @@
 echo Updating apt-get
 sudo apt-get update
 
-# Symlink keyboard settings for Ubuntu. Colemake ftw!
-echo Setting keyboard symlinks
-ln -sf ~/keyboard/gb /usr/share/X11/xkb/symbols/gb
+# Copy keyboard settings for Ubuntu. Colemake ftw!
+echo Copying over keyboard settings
+mv ~/keyboard/gb /usr/share/X11/xkb/symbols/gb
 
 # Installing neovim from source as 5.0 isn't available with apt-get yet
 echo Installing neovim
