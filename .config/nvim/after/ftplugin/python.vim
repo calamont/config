@@ -22,5 +22,5 @@ setlocal cursorline                              " highlight line cursor is on
 " any word the exists in the current source file. This is useful
 " for all text files and will probably be used more than functions
 " attached to an instantiated class.
-imap <C-n> <Plug>(completion_smart_tab)
-imap <C-N> <Plug>(completion_smart_s_tab)
+" imap <C-n> <Plug>(completion_smart_tab)
+" imap <C-N> <Plug>(completion_smart_s_tab)

@@ -26,6 +26,9 @@ Plug 'tpope/vim-repeat'
 " To handle create, delete, yank, change brackets
 Plug 'tpope/vim-surround'
 
+" For smooooooth scrolling
+Plug 'karb94/neoscroll.nvim'
+
 " Colour schemes
 Plug 'folke/tokyonight.nvim'
 Plug 'ayu-theme/ayu-vim'
@@ -40,8 +43,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim', {'do': 'make'}
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/playground'
 
 " :Plug 'dbeniamine/cheat.sh-vim'
 
@@ -170,6 +173,13 @@ nnoremap <silent><Leader>hh :set paste<CR>m`o<Esc>``:set nopaste<CR>
 " - $x -> jump to end of line and delete one character
 " - `a -> return to original positino using the set mark
 nnoremap <Leader>tr ma$x`a
+
+" Remapping for moving the code/words that begin after column 80 to the line
+" below
+" - 80<Bar>   -> the equivalent of typing 80| - this goes to column 80
+" - Wi<BS>    -> go to beginning of next word, and remove whitespace between
+" - <CR><Esc> -> move remaining text on line to the line below and exit insert
+nnoremap <Leader>j 80<Bar>Wi<BS><CR><Esc>
 
 " Fugutive Git remappings!!
 nnoremap <Leader>gs :Git<CR>  " show git status
