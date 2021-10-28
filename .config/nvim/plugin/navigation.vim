@@ -29,6 +29,11 @@ nnoremap <Leader>bn :bnext<CR>                   " cycle to next buffer
 nnoremap <Leader>bp :bprevious<CR>               " cycle back to last buffer
 nnoremap <Leader>bb <C-^>                        " jump back to previous buffer
 
+" TODO: The below would be useful for quickly jumping between functions but it
+" isn't remapping for some reason
+nnoremap [f [m
+nnoremap ]f ]m
+
 " Open and cycle through quickfix list
 nnoremap <C-q> :copen<CR>
 nnoremap <C-]> :cn<CR>

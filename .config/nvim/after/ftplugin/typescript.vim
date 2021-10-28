@@ -11,7 +11,8 @@ setlocal shiftround
 setlocal autoindent
 setlocal number                                         " show line numbers
 
-" Includes searching through imported files
-" setlocal include=^import\\s[0-9a-z]*\\sfrom\\s\"\\zs.*\\ze\"
-" setlocal define  TODO: Need to update how a definition looks like in
-" javascript
+" Creates a % pair between = and ;
+" Currently this isn't as useful as I first thought as
+" it doesn't allow you to Delete Inside/Around as you
+" do with () and {} pairs
+" setlocal matchpairs+==:;
