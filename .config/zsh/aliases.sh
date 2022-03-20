@@ -1,5 +1,5 @@
 alias pip=pip3
-alias ls="ls -lG"
+alias ls="ls -lpG"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 alias UCL="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/UCL"
 alias modules="cd /Users/cal_lamont/Library/Mobile\ Documents/com~apple~CloudDocs/programming/python/modules"
@@ -13,3 +13,4 @@ alias gvim="nvim -c 'Ge:'"  # use nvim fugitive plugin to organise git
 alias ecr_login='aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com'
 
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias venv='python3 -m venv venv && . venv/bin/activate && pip install --upgrade pip &> /dev/null'

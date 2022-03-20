@@ -22,38 +22,20 @@ source $ZDOTDIR/aliases.sh
 # 
 ##
 
-# TODO: REMOVE OH MY ZSH
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/sbin:/usr/local/bin:$HOME/bin:$PATH
+# Add poetry to path
 
 # TODO: Uncomment when install pyenv
 # Change pipenv variable to respect pyenv's local version
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init --path)"
-# eval "$(pyenv virtualenv-init -)";
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)";
 
 # Allow colours for `ls` to be turned on. The specific colours can be
 # changed in the ANSI colours terminal preferences
 # export CLICOLOR=1
-
-# TODO: REMOVE OH MY ZSH
-# Path to your oh-my-zsh installation.
-# export ZSH="/Users/cal_lamont/.oh-my-zsh"
-
-# TODO: REMOVE OH MY ZSH
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -169,5 +151,5 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 bindkey -M viins "^P" vi-up-line-or-history
 bindkey -M viins "^N" vi-down-line-or-history
 
-# TODO: Uncomment when uninstall python/poetry stuff
-# export PATH="$HOME/.poetry/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
