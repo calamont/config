@@ -20,6 +20,8 @@ vnoremap <bslash> <space>
 
 " Scroll down keeping cursor in place
 nnoremap <C-c> <C-e>
+" Limit lines <C-u> and <C-d> jump
+" set scroll=10
 
 " Move forward and back jumps
 nnoremap <C-i> <C-i>

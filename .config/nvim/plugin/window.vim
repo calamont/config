@@ -54,7 +54,12 @@ let g:completion_enable_auto_hover = 0
 " General settings for splits
 set splitbelow
 set splitright
-set rnu
+
+" Turn on relative line numbers. While this is useful it is a bit of a crutch.
+" I'm turning it off for a bit to see if I can train my eyes to better
+" estimate jump distances.
+" set rnu  " turn on relative line numbers
+set nonu  " turn off line numbers
 
 " Briefly highlight yanked region of text
 augroup highlight_yank

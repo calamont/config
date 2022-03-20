@@ -1,7 +1,7 @@
 let &colorcolumn=join(range(80,400),",")        " highlight columns after 80
 " set highlight+=c:LineNr                          " highlight line number differently - doesn't work on neovim
 " Set line numbers as default in files and netrw
-setlocal number
+" setlocal number
 
 " Scroll before getting to the bottom of the screen **doesn't seem to be
 " working in python!
