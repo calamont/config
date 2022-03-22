@@ -1,44 +1,28 @@
-" 2. DEFAULT WINDOW SETTINGS
-" Default tab options.
+" DEFAULT WINDOW SETTINGS
+" Default tab options
 setlocal shiftwidth=4
-setlocal expandtab                                      " tabs are spaces
-setlocal tabstop=4                                      " number of visual spaces per TAB
-setlocal softtabstop=4                                  " number of spaces in tab when editing
+setlocal expandtab                               " tabs are spaces
+setlocal tabstop=4                               " number of visual spaces per TAB
+setlocal softtabstop=4                           " number of spaces in tab when editing
 setlocal shiftround
 setlocal autoindent
-setlocal nowrap                                              " don't wrap text around
-setlocal scrolloff=8                                         " start scrolling 8 lines from screen top/bottom
-" set signcolumn=yes                                      " gutter for linting/git
+setlocal nowrap                                  " don't wrap text around
+setlocal scrolloff=8                             " start scrolling 8 lines from screen top/bottom
+" set signcolumn=yes                             " gutter for linting/git
 
 " Infer and colour syntax using the filetype.
 filetype on
 syntax on  " turn on syntax highlighting
 
-" set hidden                                       " allows hiding buffer w/o saving
-" set autowriteall                                 " autosaves buffer before hiding
-" set highlight+=c:LineNr                          " highlight line number differently
+" set hidden                                     " allows hiding buffer w/o saving
+" set autowriteall                               " autosaves buffer before hiding
+" set highlight+=c:LineNr                        " highlight line number differently
 set guicursor=                                   " use block cursor
 set number                                       " show absolute line number for cursor
 set list                                         " show whitespace
 set listchars+=trail:•                           " show trailing whitespace with bullets
 set listchars+=eol:⠀                             " U+2800 (blank) - don't show eol
 set noshowmode                                   " dont show modes at bottom
-
-" Turn on smoooooth scrolling
-lua <<EOF
-require('neoscroll').setup({
-    -- All these keys will be mapped to their corresponding default scrolling animation
-    mappings = {'<C-u>', '<C-d>', 'zt', 'zz', 'zb'},
-    hide_cursor = true,          -- Hide cursor while scrolling
-    stop_eof = true,             -- Stop at <EOF> when scrolling downwards
-    use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-    respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-    cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-    easing_function = nil,        -- Default easing function
-    pre_hook = nil,              -- Function to run before the scrolling animation starts
-    post_hook = nil,              -- Function to run after the scrolling animation ends
-})
-EOF
 
 " Nicer interarction with autocomplete/LSP
 set completeopt=menu,noinsert,noselect
@@ -98,6 +82,11 @@ let g:tokyonight_italic_keywords = 0
 " let g:tokyonight_hide_inactive_statusline = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 colorscheme tokyonight
+
+" let g:dracula_bold = 0
+" let g:dracula_italic = 0
+" colorscheme dracula
+
 " set background=dark
 " let g:oceanic_material_transparent_background = 1
 " let g:oceanic_material_allow_italic = 1
