@@ -1,0 +1,22 @@
+[user]
+    name = calamont
+    email = cal_lamont@hotmail.com
+[init]
+    defaultBranch = main
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[core]
+    pager = less -FXR
+[alias]
+    root = cd rev-parse --show-toplevel
