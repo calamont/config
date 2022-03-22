@@ -4,7 +4,7 @@
 # See the documentation for what each characters means
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 ##
-PROMPT='%F{#9EB85F}%B%~%b%f %F{#FF9E64}%T%f %B%F{#9EB85F}|%f%b '
+PROMPT='%F{#9EB85F}%B%3~%b%f %F{#FF9E64}%T%f %B%F{#9EB85F}|%f%b '
 
 ##
 # IMPORT ALIASES
