@@ -19,4 +19,4 @@
 [core]
     pager = less -FXR
 [alias]
-    root = cd rev-parse --show-toplevel
+    root = rev-parse --show-toplevel

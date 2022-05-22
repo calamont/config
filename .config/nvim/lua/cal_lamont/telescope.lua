@@ -1,7 +1,7 @@
 local actions = require('telescope.actions')
 require('telescope').setup{
     defaults = {
-        file_ignore_patterns = {"node_modules/", "__pycache__/", "*.pyc"},
+        file_ignore_patterns = {'node_modules/', '__pycache__/', 'venv/', '*.pyc'},
         file_previewer = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer = require('telescope.previewers').vim_buffer_cat.new,
 
