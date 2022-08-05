@@ -1,6 +1,6 @@
 [user]
-    name = calamont
-    email = cal_lamont@hotmail.com
+    name = Callum Lamont
+    email = callum.lamont@complyadvantage.com
 [init]
     defaultBranch = main
 [color]
@@ -18,5 +18,10 @@
     new = green bold
 [core]
     pager = less -FXR
+	excludesfile = /Users/calluml/.config/git/.gitignore_global
 [alias]
     root = rev-parse --show-toplevel
+    mr-summary = !git log main.. --pretty=format:\"• %h - %s<br>\" --reverse | sed \"s/PLA-[0-9]*: //g\"
+
+[merge]
+	tool = nvimdiff
