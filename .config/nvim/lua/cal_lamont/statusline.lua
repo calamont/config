@@ -102,13 +102,13 @@ M.set_active = function(self)
   local mins, secs = math.floor(total_secs / 60), total_secs % 60
 
   local timer_color = '%#StatusLine#'
-  if mins < 0
-  then
-    timer_color = '%#TimerEnd#'
-  elseif mins < 5
-  then
-    timer_color = '%#TimerNearEnd#'
-  end
+  -- if mins < 0
+  -- then
+  --   timer_color = '%#TimerEnd#'
+  -- elseif mins < 5
+  -- then
+  --   timer_color = '%#TimerNearEnd#'
+  -- end
 
   -- pad timer with zeros for aesthetics
   mins = string.format("%02d", mins)
@@ -119,7 +119,7 @@ M.set_active = function(self)
 end
 
 M.set_inactive = function(self)
-  return self.colors.inactive .. '%= ─────────────────────── %F  ───────────────────────% %='
+  return self.colors.inactive .. '%= %F % %='
 end
 
 M.set_explorer = function(self)
