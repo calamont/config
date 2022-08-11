@@ -11,3 +11,7 @@ alias ecr_login='aws ecr get-login-password --region $AWS_REGION | docker login 
 
 alias config='git --git-dir=$HOME/.config_bare/ --work-tree=$HOME'
 alias venv='python3 -m venv venv && . venv/bin/activate && pip install --upgrade pip &> /dev/null'
+
+alias pjson='pbpaste | jq'  # prints valid json in your clipboard
+# prints a list of root and nested keys for a json object
+alias list_keys="jq 'select(objects)|=[.] | map(paths(scalars)) | map( map(select(numbers)=\"[]\") | join(\".\")) | unique'"
