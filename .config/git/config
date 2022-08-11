@@ -21,7 +21,8 @@
 	excludesfile = /Users/calluml/.config/git/.gitignore_global
 [alias]
     root = rev-parse --show-toplevel
-    mr-summary = !git log main.. --pretty=format:\"• %h - %s<br>\" --reverse | sed \"s/PLA-[0-9]*: //g\"
+    mr-summary = !git log main.. --pretty=format:\"**%h - %s**<br>\" --reverse | sed \"s/PLA-[0-9]*: //g\"
+    mr-summary-long = !git log main.. --pretty=format:\"**%h - %s**<br>\" --reverse | sed \"s/PLA-[0-9]*: //g\"
 
 [merge]
 	tool = nvimdiff
