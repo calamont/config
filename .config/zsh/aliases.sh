@@ -15,3 +15,4 @@ alias venv='python3 -m venv venv && . venv/bin/activate && pip install --upgrade
 alias pjson='pbpaste | jq'  # prints valid json in your clipboard
 # prints a list of root and nested keys for a json object
 alias list_keys="jq 'select(objects)|=[.] | map(paths(scalars)) | map( map(select(numbers)=\"[]\") | join(\".\")) | unique'"
+alias gradleinit='docker run --rm -v "$PWD":/home/gradle/project -w /home/gradle/project -it gradle gradle init'
