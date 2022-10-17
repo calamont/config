@@ -163,6 +163,14 @@ vim.keymap.set(
     { noremap = true, desc = 'Removes the current buffer from `buffers`.' }
 )
 
+vim.keymap.set(
+    't',
+    '<Esc>',
+    '<C-\\><C-n>',
+    { noremap = true, desc = 'Map <Esc> to exit terminal mode' }
+)
+
+
 -- Open and cycle through quickfix list
 vim.keymap.set(
     'n',
