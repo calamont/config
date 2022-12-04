@@ -38,14 +38,26 @@ Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 Plug('dracula/vim', { ['as'] = 'dracula' })
 
+-- Search
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug('nvim-telescope/telescope-fzy-native.nvim', {['do'] = 'make'})
 
+-- LSP
 Plug 'neovim/nvim-lspconfig'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})  -- updating the parsers on update
 Plug 'nvim-treesitter/playground'
+
+-- Completion
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug('L3MON4D3/LuaSnip', {['tag'] = 'v1.*'})
 
 vim.call('plug#end')
 

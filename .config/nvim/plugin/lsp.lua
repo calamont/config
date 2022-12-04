@@ -1,11 +1,39 @@
+-- Advertise completion capabilities to LSPs
+-- TODO: Delete line below if the tbl merge is a better approach
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
+local lsp_defaults = lspconfig.util.default_config
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+  'force',
+  lsp_defaults.capabilities,
+  require('cmp_nvim_lsp').default_capabilities()
+)
+
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.tsserver.setup{
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+}
+require'lspconfig'.jdtls.setup{
+  capabilities = capabilities
 }
 require'lspconfig'.terraformls.setup{
   filetypes = { "terraform" , "tf" }
 }
 -- TODO: set up YAML lsp server
+
+-- TODO: hide the keymap configuration in an autocmd. As per the docs:
+-- To use other LSP features like hover, rename, etc. you can setup some
+-- additional keymaps. It's recommended to setup them in a |LspAttach| autocmd to
+-- ensure they're only active if there is a LSP client running. An example:
+-- >
+--     vim.api.nvim_create_autocmd('LspAttach', {
+--       callback = function(args)
+--         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
+--       end,
+--     })
+--  This blog has some useful information
+--  https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
+
 
 vim.keymap.set(
     'n',
@@ -46,6 +74,6 @@ vim.keymap.set(
 vim.keymap.set(
     'n',
     '<leader>ld',
-    vim.lsp.diagnostic.goto_next,
+    vim.diagnostic.goto_next,
     { noremap = true, desc = 'Go to the next error message.' }
 )

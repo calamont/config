@@ -137,6 +137,19 @@ vim.keymap.set(
     { desc = 'Move cursor to the split below.' }
 )
 
+vim.keymap.set(
+    'n',
+    '<C-d>',
+    '<C-d>zz',
+    { desc = 'Move a half page down and recentre the screen.' }
+)
+vim.keymap.set(
+    'n',
+    '<C-u>',
+    '<C-u>zz',
+    { desc = 'Move a half page up and recentre the screen.' }
+)
+
 -- For quickly switching between buffers
 vim.keymap.set(
     'n',
