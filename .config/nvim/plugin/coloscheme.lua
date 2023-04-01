@@ -1,3 +1,6 @@
+-- ROSE-PINE -------------------------------------------------------------------
+-- vim.cmd[[colorscheme rose-pine]]
+
 -- AYUCOLOR -------------------------------------------------------------------
 -- vim.o.ayucolor = 'mirage'
 -- vim.cmd[[colorscheme ayu]]

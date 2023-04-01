@@ -204,3 +204,10 @@ vim.keymap.set(
     { noremap = true, desc = 'Goes to previous item in quickfix list.' }
 )
 
+-- Folding
+vim.keymap.set(
+    'n',
+    'zf',
+    'zMzvzO',
+    { noremap = true, desc = 'Fold everything except the current node.' }
+)

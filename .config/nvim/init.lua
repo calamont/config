@@ -28,8 +28,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 -- To create, delete, yank, change brackets
 Plug 'tpope/vim-surround'
+-- To managing undos
+Plug 'mbbill/undotree'
 
 -- Colour schemes
+Plug 'rose-pine/neovim'
 Plug 'folke/tokyonight.nvim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'gruvbox-community/gruvbox'
@@ -48,6 +51,7 @@ Plug('nvim-telescope/telescope-fzy-native.nvim', {['do'] = 'make'})
 Plug 'neovim/nvim-lspconfig'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})  -- updating the parsers on update
 Plug 'nvim-treesitter/playground'
+-- TODO: look into getting context - https://github.com/nvim-treesitter/nvim-treesitter-context
 
 -- Completion
 Plug 'neovim/nvim-lspconfig'
