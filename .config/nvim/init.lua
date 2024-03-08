@@ -18,18 +18,17 @@
 
 -- VimPlug has a few minor modifications when called from Lua
 vim.call('plug#begin', '~/.config/nvim/plugged')
-
 local Plug = vim.fn['plug#']
 
 -- To comment and uncomment
 Plug 'tpope/vim-commentary'
 -- For git
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
--- To create, delete, yank, change brackets
-Plug 'tpope/vim-surround'
 -- To managing undos
 Plug 'mbbill/undotree'
+-- Other convenience motions/actions
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 -- Colour schemes
 Plug 'rose-pine/neovim'
@@ -47,7 +46,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug('nvim-telescope/telescope-fzy-native.nvim', {['do'] = 'make'})
 
--- LSP
+-- LSP and other code intelligence
 Plug 'neovim/nvim-lspconfig'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})  -- updating the parsers on update
 Plug 'nvim-treesitter/playground'
@@ -60,6 +59,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+-- TODO: Do I need these snippet autocompletes?
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug('L3MON4D3/LuaSnip', {['tag'] = 'v1.*'})
 
@@ -92,8 +92,5 @@ end
 -- Make space the leader key
 vim.g.mapleader = " "
 
--- Custom remappings for specific Lua functions
-require('cal_lamont')
-require('cal_lamont.cheatsheet')
-require('cal_lamont.statusline')
--- nnoremap <Leader>cs :call v:lua.cheatsheet('')<left><left>
+require('calamont.statusline')
+require('calamont.easytest.java')
