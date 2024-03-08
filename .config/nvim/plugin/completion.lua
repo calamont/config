@@ -10,7 +10,6 @@ vim.opt.shortmess = vim.opt.shortmess + 'c'
 -- Don't pop up autocompletion by default
 vim.g.completion_enable_auto_popup = 0
 vim.g.completion_enable_auto_hover = 0
--- let g:completion_enable_auto_signature = 0
 
 local cmp = require "cmp"
 
