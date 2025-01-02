@@ -10,6 +10,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 )
 
 require'lspconfig'.lua_ls.setup {
+  cmd = { os.getenv( "HOME" ) .. "/language_servers/lua-language-server/bin/lua-language-server" },
   settings = {
     Lua = {
       runtime = {
@@ -36,7 +37,7 @@ require'lspconfig'.lua_ls.setup {
 }
 
 require'lspconfig'.pyright.setup{}
-require'lspconfig'.tsserver.setup{
+require'lspconfig'.ts_ls.setup{
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
 }
 require'lspconfig'.jdtls.setup{

@@ -27,3 +27,16 @@ local group = vim.api.nvim_create_augroup('HighlightYank', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', { callback = function()
     vim.highlight.on_yank()
 end, group = group })
+
+-- Configure details for chosen colorscheme
+require("rose-pine").setup({
+    variant = "auto", -- auto, main, moon, or dawn
+    dark_variant = "main", -- main, moon, or dawn
+
+    styles = {
+        bold = true,
+        italic = false,
+        transparency = false,
+    },
+})
+vim.cmd("colorscheme rose-pine")
