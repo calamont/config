@@ -10,10 +10,10 @@ alias dirs='dirs -v'
 # For development
 alias gs='git status'
 
+alias uuidgen="uuidgen | tr '[:upper:]' '[:lower:]'"
+
 alias dc='docker compose'
-alias pip=pip3
 alias ls="ls -lpG"
-alias weather="curl http://wttr.in/"
 # alias grep="ggrep"  # use GNU grep
 alias paws="aws --profile personal"
 # TODO: Is this needed anymore?
@@ -28,7 +28,7 @@ alias venv='python3 -m venv venv && . venv/bin/activate && pip install --upgrade
 alias pjson='pbpaste | jq'  # prints valid json in your clipboard
 # prints a list of root and nested keys for a json object
 alias list_keys="jq 'select(objects)|=[.] | map(paths(scalars)) | map( map(select(numbers)=\"[]\") | join(\".\")) | unique'"
-#
+
 # TODO: Do I want any of these Java/Gradle aliases? I can't seem to remember them.
 alias gradleinit='docker run --rm -v "$PWD":/home/gradle/project -w /home/gradle/project -it gradle gradle init'
 alias springwebinit="curl https://start.spring.io/starter.zip -d dependencies=web -d bootVersion=2.7.4 -d type=gradle-project  -o my-project.zip"

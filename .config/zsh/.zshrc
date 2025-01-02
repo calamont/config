@@ -10,8 +10,8 @@ PROMPT='%F{#9EB85F}%B%3~%b%f %F{#FF9E64}%T%f %B%F{#9EB85F}|%f%b '
 # IMPORT ALIASES
 ##
 source $ZDOTDIR/aliases.sh
-if [ -f $ZDOTDIR/ca_aliases.sh ]; then
-  source $ZDOTDIR/ca_aliases.sh
+if [ -f $ZDOTDIR/work_aliases.sh ]; then
+  source $ZDOTDIR/work_aliases.sh
 fi
 
 ##
@@ -29,24 +29,13 @@ fi
 export PATH=$HOME/go/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$PATH
 # Add poetry to path
 
-# TODO: Uncomment when install pyenv
+# TODO: Uncomment when you install pyenv
 # Change pipenv variable to respect pyenv's local version
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)";
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# TODO: Are these env vars just for oh-my-zsh?
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-#
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-#
 # TODO: Need to bind `edit-command-line` to something to allow better editing of
 # commands
 
@@ -66,23 +55,17 @@ export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
 # bindkey "^N" vi-down-line-or-history
 
 # Search backwards and forwards with a pattern
-bindkey -M vicmd '/' history-incremental-pattern-search-backward
-bindkey -M vicmd '?' history-incremental-pattern-search-forward
+# TODO: Temporarily commenting these out to see if I need them.
+# bindkey -M vicmd '/' history-incremental-pattern-search-backward
+# bindkey -M vicmd '?' history-incremental-pattern-search-forward
 # set up for insert mode too
-bindkey -M viins '^R' history-incremental-pattern-search-backward
-bindkey -M viins '^F' history-incremental-pattern-search-forward
-bindkey -M viins "^P" vi-up-line-or-history
-bindkey -M viins "^N" vi-down-line-or-history
+# bindkey -M viins '^R' history-incremental-pattern-search-backward
+# bindkey -M viins '^F' history-incremental-pattern-search-forward
+# bindkey -M viins "^P" vi-up-line-or-history
+# bindkey -M viins "^N" vi-down-line-or-history
 
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
-
-
-export PATH="$HOME/.poetry/bin:$PATH"
-export CDPATH=".:$HOME/Desktop/tms"
-# source ~/.kube/ekscfg/ekscfg_source
-export KUBECONFIG=$(find ~/.kube/ekscfg/kubeconfigs -type f | paste -s -d: -)
-export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config"
 
 
 # All the fun JVM configuration
@@ -102,3 +85,10 @@ if [ -f '/Users/calluml/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/calluml
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/calluml/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/calluml/google-cloud-sdk/completion.zsh.inc'; fi
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# TODO: Create a cdpath if needed later.
+# export CDPATH=".:$HOME/Desktop/tms"
+
+# Required as described by https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
