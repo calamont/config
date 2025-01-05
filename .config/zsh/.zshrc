@@ -50,9 +50,9 @@ export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
 
 # Create keybindings for incremental search as it allows
 # for regex patterns.
-# bindkey '^R' history-incremental-pattern-search-backward
-# bindkey "^P" vi-up-line-or-history
-# bindkey "^N" vi-down-line-or-history
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey "^P" vi-up-line-or-history
+bindkey "^N" vi-down-line-or-history
 
 # Search backwards and forwards with a pattern
 # TODO: Temporarily commenting these out to see if I need them.
