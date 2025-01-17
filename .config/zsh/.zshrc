@@ -29,6 +29,9 @@ fi
 export PATH=$HOME/go/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$PATH
 # Add poetry to path
 
+# Allows use of psql from homebrew (without having to install entire PostgreSQL engine).
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
 # TODO: Uncomment when you install pyenv
 # Change pipenv variable to respect pyenv's local version
 export PYENV_ROOT="$HOME/.pyenv"
@@ -71,9 +74,6 @@ export HISTSIZE=1000000000
 # All the fun JVM configuration
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 export MAVEN_REPOSITORY="$HOME/.m2/repository"
-# TODO: store language servers in a less hardcoded location?
-export PATH="$HOME/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/bin:$PATH"
-export PATH="$HOME/language_servers/kotlin-language-server/server/build/install/server/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
