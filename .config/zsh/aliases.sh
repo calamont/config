@@ -31,7 +31,7 @@ alias list_keys="jq 'select(objects)|=[.] | map(paths(scalars)) | map( map(selec
 
 # TODO: Do I want any of these Java/Gradle aliases? I can't seem to remember them.
 alias gradleinit='docker run --rm -v "$PWD":/home/gradle/project -w /home/gradle/project -it gradle gradle init'
-alias springwebinit="curl https://start.spring.io/starter.zip -d dependencies=web -d bootVersion=2.7.4 -d type=gradle-project  -o my-project.zip"
+alias springwebinit="curl https://start.spring.io/starter.zip -d dependencies=web -d bootVersion=3.4.1 -d type=gradle-project  -o my-project.zip"
 alias javad='docker run -it --rm -v "$PWD":/home/gradle/src -w /home/gradle/src -e /bin/bash openjdk:17'
 alias gradlew='docker run --rm -v "$PWD":/home/gradle/src -w /home/gradle/src -e /bin/bash openjdk:17 ./gradlew'
 alias jepl='docker run -it --rm -v "$PWD":/home/gradle/src -w /home/gradle/src -e /bin/bash openjdk:17'
