@@ -1,6 +1,6 @@
 -- Advertise completion capabilities to LSPs
 -- TODO: Delete line below if the tbl merge is a better approach
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities = vim.tbl_deep_extend(
@@ -9,7 +9,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
-require'lspconfig'.lua_ls.setup {
+lspconfig.lua_ls.setup {
   cmd = { os.getenv( "HOME" ) .. "/language_servers/lua-language-server/bin/lua-language-server" },
   settings = {
     Lua = {
@@ -41,13 +41,15 @@ require'lspconfig'.ts_ls.setup{
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
 }
 require'lspconfig'.jdtls.setup{
+  cmd = { os.getenv( "HOME" ) .. "/language_servers/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/bin/jdtls" },
   capabilities = capabilities
 }
 require'lspconfig'.terraformls.setup{
   filetypes = { "terraform" , "tf" }
 }
 require'lspconfig'.kotlin_language_server.setup{
-  filetypes = { "kotlin" , "kt" }
+  cmd = { os.getenv( "HOME" ) .. "/language_servers/kotlin-language-server/server/build/install/server/bin/kotlin-language-server" },
+  filetypes = { "kotlin" , "kt", "kts" }
 }
 -- TODO: set up YAML lsp server
 
