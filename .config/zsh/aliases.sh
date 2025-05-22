@@ -36,3 +36,5 @@ alias javad='docker run -it --rm -v "$PWD":/home/gradle/src -w /home/gradle/src 
 alias gradlew='docker run --rm -v "$PWD":/home/gradle/src -w /home/gradle/src -e /bin/bash openjdk:17 ./gradlew'
 alias jepl='docker run -it --rm -v "$PWD":/home/gradle/src -w /home/gradle/src -e /bin/bash openjdk:17'
 alias direnv='export $(grep -v '^#' .env | xargs)'
+
+alias kc='kubectl'
