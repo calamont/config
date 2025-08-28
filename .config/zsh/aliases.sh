@@ -9,6 +9,7 @@ alias dirs='dirs -v'
 
 # For development
 alias gs='git status'
+alias gwip='git commit --all --no-verify -m "wip: code dump"'
 
 alias uuidgen="uuidgen | tr '[:upper:]' '[:lower:]'"
 

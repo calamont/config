@@ -69,6 +69,8 @@ bindkey "^N" vi-down-line-or-history
 
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
 
 
 # All the fun JVM configuration
@@ -89,6 +91,12 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # TODO: Create a cdpath if needed later.
 # export CDPATH=".:$HOME/Desktop/tms"
 
-# Required as described by https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# ================== KRAKEN ================== #
+# Required for nvm as described by homebrew
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
+# export DOCKER_HOST="unix:///Users/callum.lamont/.colima/default/docker.sock"
+docker context use colima
+
+. "$HOME/.local/bin/env"
