@@ -36,7 +36,8 @@ lspconfig.lua_ls.setup {
   },
 }
 
-require'lspconfig'.pyright.setup{}
+vim.lsp.config('basedpyright', {})
+vim.lsp.enable('basedpyright')
 require'lspconfig'.ts_ls.setup{
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
 }
