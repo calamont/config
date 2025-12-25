@@ -1,8 +1,27 @@
+require('telescope').setup({
+  defaults = {
+    -- Your existing defaults...
+  },
+  pickers = {
+    -- Configure the dynamic workspace symbols picker globally
+    lsp_dynamic_workspace_symbols = {
+      ignore_symbols = { "variable", "constant", "field" },
+    },
+  },
+})
+
 vim.keymap.set(
     'n',
     '<Leader>ff',
     '<cmd>Telescope find_files<cr>',
     { noremap = true, desc = 'Opens fuzzy file finder.' }
+)
+
+vim.keymap.set(
+    'n',
+    '<Leader>fs',
+    '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
+    { noremap = true, desc = 'Opens LSP symbol search.' }
 )
 
 vim.keymap.set(
